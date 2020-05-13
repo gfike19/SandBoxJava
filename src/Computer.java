@@ -1,4 +1,4 @@
-public class Computer {
+public class Computer extends AbstractEntity {
 
     public int hdd;
     public double cpu;

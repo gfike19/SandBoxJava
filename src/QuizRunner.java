@@ -5,13 +5,41 @@ import java.util.Map;
 public class QuizRunner {
 
     public static void main(String[] args) {
-        ArrayList<String> chkBxAn = new ArrayList<>();
-        chkBxAn.add("Standard") ;
-        chkBxAn.add("Elven");
-        chkBxAn.add("Dwarven");
-    chkBxAn.add("Metric");
-        Checkbox ch = new Checkbox("In what system is ton found?", 4, chkBxAn);
-        System.out.print(ch.id);
+        HashMap<Character, String> choices = new HashMap<>();
+        choices.put('a', "Anna");
+        choices.put('b', "Fiona");
+        choices.put('c', "Luna");
+        choices.put('d', "Reapl");
+        ArrayList<String> answer = new ArrayList<>();
+        answer.add("a");
+        answer.add("b");
+        Checkbox chkbx = new Checkbox("Who are the bestest girls?", choices, 5, answer);
+
+        TrueFalse tf = new TrueFalse("Allison is always right", 5, "t");
+
+        MultiChoice mc =  new MultiChoice("Who is a demon?", choices, 5, "d");
+
+        // TODO get multiple choice to work properly
+        // test checkbox
+        Quiz qz = new Quiz();
+        qz.addQuestion(chkbx);
+        //qz.runQuiz();
+
+        // test true false
+        Quiz qz0 = new Quiz();
+        qz0.addQuestion(tf);
+        //qz0.runQuiz();
+
+        //test multiple choice
+        Quiz qz1 = new Quiz();
+        qz1.addQuestion(mc);
+        //qz1.runQuiz();
+
+        //test multiple choice and true false
+        Quiz qz2 = new Quiz();
+        qz2.addQuestion(tf);
+        qz2.addQuestion(mc);
+        //qz2.runQuiz();
         }
     }
 

@@ -1,30 +1,30 @@
-public class Question extends AbstractEntity {
+abstract class Question {
 
-    public Object query;
+    public String query;
+    public Object choices;
     public int value;
     public Object answer;
+    public String type;
 
-    public Object getQuery() {
+    public void displayQuestion(){};
+
+    public String getQuery() {
         return query;
     }
 
-    public void setQuery(Object query) {
-        this.query = query;
+    public Object getChoices() {
+        return choices;
     }
 
     public int getValue() {
         return value;
     }
 
-    public void setValue(int value) {
-        this.value = value;
-    }
-
     public Object getAnswer() {
         return answer;
     }
 
-    public void setAnswer(Object answer) {
-        this.answer = answer;
+    public String getType() {
+        return type;
     }
 }

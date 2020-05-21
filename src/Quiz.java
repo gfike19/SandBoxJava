@@ -46,22 +46,22 @@ public class Quiz {
                 System.out.print("Enter your answers separated by a comma, no spaces.\n");
                 String raw = in.nextLine();
                 String [] userInput = raw.split(",");
-                ArrayList<String> answers = (ArrayList<String>) q.getAnswer();
                 int subTotal = 0;
                 // TODO to account for different cases
-                for(String s : userInput) {
-                    try{
-                        answers.indexOf(s);
-                        subTotal += 1;
-                    } catch(Exception e){}
+                String [] answer = (String []) q.getAnswer();
+
+                if(userInput.length == answer.length) {
+                    for(int i = 0; i < userInput.length; i++){
+                        if (userInput[i] == answer[i]) {
+                            subTotal++;
+                        }
+                    }
+                } else {
+
                 }
 
                 // if the user gets some of the answers right give them some credit
-                if(subTotal != 0 && subTotal != answers.size()) {
-                    this.numCorrect += (subTotal / q.getValue());
-                } else {
-                    this.numCorrect += q.value;
-                }
+
             }
 
             //multiple choice and true false

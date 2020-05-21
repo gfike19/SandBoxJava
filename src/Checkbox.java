@@ -9,7 +9,7 @@ import java.util.Map;
 public class Checkbox extends Question {
 
     public Checkbox(String query, HashMap<Character, String> choices,
-                    int value, ArrayList<String> answer) {
+                    int value, String [] answer) {
         this.query = query;
         this.choices = choices;
         this.value = value;

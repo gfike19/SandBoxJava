@@ -10,9 +10,7 @@ public class QuizRunner {
         choices.put('b', "Fiona");
         choices.put('c', "Luna");
         choices.put('d', "Reapl");
-        ArrayList<String> answer = new ArrayList<>();
-        answer.add("a");
-        answer.add("b");
+        String [] answer = new String[] {"a", "b"};
         Checkbox chkbx = new Checkbox("Who are the bestest girls?", choices, 5, answer);
 
         TrueFalse tf = new TrueFalse("Allison is always right", 5, "t");

@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="953839af-cb92-41a4-8385-7738b07e2566" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/AbstractEntity.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Checkbox.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Checkbox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/MultiChoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MultiChoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Question.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Quiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Quiz.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/QuizRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/QuizRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/TrueFalse.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/TrueFalse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Checkbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Checkbox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quiz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/QuizRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizRunner.java" afterDir="false" />
     </list>
@@ -46,7 +41,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SelfCheckoutSimJava" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -92,18 +87,26 @@
       <option name="project" value="LOCAL" />
       <updated>1589999559296</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="changed checkbox choices to array">
+      <created>1590091379837</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1590091379837</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="almost complete, mc not working correct" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost complete, mc not working correct" />
+    <MESSAGE value="changed checkbox choices to array" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed checkbox choices to array" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="446" y="25" key="#com.intellij.ide.util.MemberChooser" timestamp="1589580572462">
+    <state x="446" y="25" key="#com.intellij.ide.util.MemberChooser" timestamp="1590355434177">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="25" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1589580572462" />
+    <state x="446" y="25" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1590355434177" />
     <state x="345" y="98" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1589235800666">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -112,30 +115,30 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1589416740732" />
-    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1589999558789">
+    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1590091378832">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1589999558789" />
+    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1590091378832" />
     <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1590075885675">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1590075885675" />
-    <state width="1237" height="204" key="GridCell.Tab.0.bottom" timestamp="1590008534510">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1590351603051">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590008534510" />
-    <state width="1237" height="204" key="GridCell.Tab.0.center" timestamp="1590008534510">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590351603051" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1590351603051">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590008534510" />
-    <state width="1237" height="204" key="GridCell.Tab.0.left" timestamp="1590008534510">
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590351603051" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1590351603051">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590008534510" />
-    <state width="1237" height="204" key="GridCell.Tab.0.right" timestamp="1590008534510">
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590351603051" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1590351603051">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590008534510" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590351603051" />
     <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1590008534511">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -152,10 +155,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1590008534511" />
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1589999562049">
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1590091382857">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1589999562049" />
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1590091382857" />
   </component>
   <component name="masterDetails">
     <states>

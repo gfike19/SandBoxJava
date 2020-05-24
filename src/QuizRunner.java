@@ -21,7 +21,7 @@ public class QuizRunner {
         // test checkbox
         Quiz qz = new Quiz();
         qz.addQuestion(chkbx);
-        //qz.runQuiz();
+        qz.runQuiz();
 
         // test true false
         Quiz qz0 = new Quiz();

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="953839af-cb92-41a4-8385-7738b07e2566" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Checkbox.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Checkbox.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Quiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Quiz.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/QuizRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/QuizRunner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quiz.java" afterDir="false" />
@@ -17,22 +16,15 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="computer-exer" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1ban89TD5QgsZa5OnDSryssQCey" />
+  <component name="ProjectId" id="1bs5v48DG8cm0C7i8c1v4Y3Ql91" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,7 +33,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/lc101/unit3/java" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -80,85 +72,49 @@
       <option name="presentableId" value="Default" />
       <updated>1564766936590</updated>
     </task>
-    <task id="LOCAL-00001" summary="almost complete, mc not working correct">
-      <created>1589999559296</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1589999559296</updated>
-    </task>
-    <task id="LOCAL-00002" summary="changed checkbox choices to array">
-      <created>1590091379837</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1590091379837</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="almost complete, mc not working correct" />
-    <MESSAGE value="changed checkbox choices to array" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed checkbox choices to array" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="446" y="25" key="#com.intellij.ide.util.MemberChooser" timestamp="1590355434177">
+    <state width="1237" height="370" key="GridCell.Tab.0.bottom" timestamp="1590372027914">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="25" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1590355434177" />
-    <state x="345" y="98" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1589235800666">
+    <state width="1237" height="370" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590372027914" />
+    <state width="1237" height="370" key="GridCell.Tab.0.center" timestamp="1590372027914">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="345" y="98" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog/0.0.1280.680@0.0.1280.680" timestamp="1589235800666" />
-    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589416740732">
+    <state width="1237" height="370" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590372027914" />
+    <state width="1237" height="370" key="GridCell.Tab.0.left" timestamp="1590372027913">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1589416740732" />
-    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1590091378832">
+    <state width="1237" height="370" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590372027913" />
+    <state width="1237" height="370" key="GridCell.Tab.0.right" timestamp="1590372027914">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1590091378832" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1590075885675">
+    <state width="1237" height="370" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590372027914" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1590364110964">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1590075885675" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1590351603051">
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590364110964" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1590364110963">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590351603051" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1590351603051">
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1590364110963" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1590364110963">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590351603051" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1590351603051">
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1590364110963" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1590364110964">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590351603051" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1590351603051">
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1590364110964" />
+    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589408181980">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590351603051" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1590008534511">
+    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1589408181980" />
+    <state x="297" y="151" key="run.anything.popup" timestamp="1590364324484">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590008534511" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1590008534511">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1590008534511" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1590008534510">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1590008534510" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1590008534511">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1590008534511" />
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1590091382857">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1590091382857" />
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1590364324484" />
   </component>
   <component name="masterDetails">
     <states>

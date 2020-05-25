@@ -17,11 +17,10 @@ public class QuizRunner {
 
         MultiChoice mc =  new MultiChoice("Who is a demon?", choices, 5, "d");
 
-        // TODO get multiple choice to work properly
         // test checkbox
         Quiz qz = new Quiz();
         qz.addQuestion(chkbx);
-        qz.runQuiz();
+//        qz.runQuiz();
 
         // test true false
         Quiz qz0 = new Quiz();
@@ -38,6 +37,12 @@ public class QuizRunner {
         qz2.addQuestion(tf);
         qz2.addQuestion(mc);
         //qz2.runQuiz();
+
+        Quiz qz3 = new Quiz();
+        qz3.addQuestion(chkbx);
+        qz3.addQuestion(mc);
+        qz3.addQuestion(tf);
+        qz.runQuiz();
         }
     }
 

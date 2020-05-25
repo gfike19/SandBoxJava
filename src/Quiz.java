@@ -44,6 +44,27 @@ public class Quiz {
                 String raw = in.nextLine();
                 String [] arr = raw.split(",");
                 String [] answers = (String []) q.getAnswer();
+                int subtotal = 0;
+
+                for(int i = 0; i < arr.length; i++) {
+                    String a = arr[i];
+                    for(int j = 0; j < answers.length; j++) {
+                        String b = answers[j];
+
+                        if(a.equalsIgnoreCase(b)) {
+                            subtotal++;
+                        }
+                    }
+                }
+
+                // TODO find way to give partial credit and display it
+//                if(subtotal > 0 && subtotal != answers.length) {
+//                    this.numCorrect += subtotal;
+//                }
+
+                if(subtotal == answers.length) {
+                    this.numCorrect += q.getValue();
+                }
             }
 
             //multiple choice and true false

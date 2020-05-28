@@ -1,0 +1,249 @@
+Index: src/Quiz.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.*;\r\n\r\n/**\r\n * Add questions\r\n * Run or carry out the quiz\r\n * Grade the quiz\r\n */\r\npublic class Quiz {\r\n\r\n    private double numCorrect;\r\n    private int total;\r\n    private double score;\r\n    private ArrayList<Question> questions = new ArrayList<>();\r\n\r\n    public Quiz() {\r\n    }\r\n\r\n    public void addMultipleQuestions(ArrayList<Question> qs) {\r\n        this.questions.addAll(qs);\r\n        for (Question q : qs) {\r\n            this.total += q.getValue();\r\n        }\r\n    }\r\n\r\n    public void addQuestion(Question q) {\r\n        this.questions.add(q);\r\n        this.total += q.getValue();\r\n    }\r\n\r\n    public void calcScore(double numCorrect) {\r\n        this.numCorrect = numCorrect;\r\n        this.score = this.numCorrect / this.total;\r\n        this.score *= 100;\r\n    }\r\n\r\n    public void runQuiz() {\r\n        Scanner in = new Scanner(System.in);\r\n        for (Question q : questions) {\r\n            q.displayQuestion();\r\n\r\n            // if question is checkbox type\r\n            if (q.type.equals(\"chkbx\")) {\r\n                System.out.print(\"Enter your answers separated by a comma, no spaces.\\n\");\r\n                String raw = in.nextLine();\r\n                String [] arr = raw.split(\",\");\r\n                String [] answers = (String []) q.getAnswer();\r\n                int subtotal = 0;\r\n\r\n                for(int i = 0; i < arr.length; i++) {\r\n                    String a = arr[i];\r\n                    for(int j = 0; j < answers.length; j++) {\r\n                        String b = answers[j];\r\n\r\n                        if(a.equalsIgnoreCase(b)) {\r\n                            subtotal++;\r\n                        }\r\n                    }\r\n                }\r\n\r\n                // TODO find way to give partial credit and display it\r\n//                if(subtotal > 0 && subtotal != answers.length) {\r\n//                    this.numCorrect += subtotal;\r\n//                }\r\n\r\n                if(subtotal == answers.length) {\r\n                    this.numCorrect += q.getValue();\r\n                }\r\n            }\r\n\r\n            //multiple choice and true false\r\n            if (q.type.equals(\"mc\") || q.type.equals(\"tf\")) {\r\n                System.out.print(\"Enter a single letter for your answer: \");\r\n                // TODO account for user entering more than one letter\r\n                String userInput = in.next().toLowerCase();\r\n                String answer = (String) q.getAnswer();\r\n                if (answer.toLowerCase().equals(userInput)) {\r\n                    this.numCorrect += q.getValue();\r\n                }\r\n            }\r\n        }\r\n\r\n        this.calcScore(numCorrect);\r\n\r\n        System.out.println(\"Total correct: \" + this.numCorrect + \"\\nOut of: \" + this.total + \"\\nComes to: \" +\r\n                this.score + \" %\");\r\n    }\r\n\r\n\r\n// getters and setters\r\n        public double getNumCorrect () {\r\n            return numCorrect;\r\n        }\r\n\r\n        public int getTotal () {\r\n            return total;\r\n        }\r\n\r\n        public double getScore () {\r\n            return score;\r\n        }\r\n\r\n        public ArrayList<Question> getQuestions () {\r\n            return questions;\r\n        }\r\n\r\n    }\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/Quiz.java	(revision 69975818a88b7e4e703647e23917240457daa34a)
++++ src/Quiz.java	(date 1590376675064)
+@@ -36,6 +36,7 @@
+     public void runQuiz() {
+         Scanner in = new Scanner(System.in);
+         for (Question q : questions) {
++            System.out.print("Question #" + q.getId() + "\n");
+             q.displayQuestion();
+ 
+             // if question is checkbox type
+Index: src/Question.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>abstract class Question {\r\n\r\n    public String query;\r\n    public Object choices;\r\n    public int value;\r\n    public Object answer;\r\n    public String type;\r\n\r\n    public void displayQuestion(){};\r\n\r\n    public String getQuery() {\r\n        return query;\r\n    }\r\n\r\n    public Object getChoices() {\r\n        return choices;\r\n    }\r\n\r\n    public int getValue() {\r\n        return value;\r\n    }\r\n\r\n    public Object getAnswer() {\r\n        return answer;\r\n    }\r\n\r\n    public String getType() {\r\n        return type;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/Question.java	(revision 69975818a88b7e4e703647e23917240457daa34a)
++++ src/Question.java	(date 1590376507692)
+@@ -1,4 +1,4 @@
+-abstract class Question {
++abstract class Question extends AbstractEntity {
+ 
+     public String query;
+     public Object choices;
+Index: src/QuizRunner.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.ArrayList;\r\nimport java.util.HashMap;\r\nimport java.util.Map;\r\n\r\npublic class QuizRunner {\r\n\r\n    public static void main(String[] args) {\r\n        HashMap<Character, String> choices = new HashMap<>();\r\n        choices.put('a', \"Anna\");\r\n        choices.put('b', \"Fiona\");\r\n        choices.put('c', \"Luna\");\r\n        choices.put('d', \"Reapl\");\r\n        String [] answer = new String[] {\"a\", \"b\"};\r\n        Checkbox chkbx = new Checkbox(\"Who are the bestest girls?\", choices, 5, answer);\r\n\r\n        TrueFalse tf = new TrueFalse(\"Allison is always right\", 5, \"t\");\r\n\r\n        MultiChoice mc =  new MultiChoice(\"Who is a demon?\", choices, 5, \"d\");\r\n\r\n        // test checkbox\r\n        Quiz qz = new Quiz();\r\n        qz.addQuestion(chkbx);\r\n//        qz.runQuiz();\r\n\r\n        // test true false\r\n        Quiz qz0 = new Quiz();\r\n        qz0.addQuestion(tf);\r\n        //qz0.runQuiz();\r\n\r\n        //test multiple choice\r\n        Quiz qz1 = new Quiz();\r\n        qz1.addQuestion(mc);\r\n        //qz1.runQuiz();\r\n\r\n        //test multiple choice and true false\r\n        Quiz qz2 = new Quiz();\r\n        qz2.addQuestion(tf);\r\n        qz2.addQuestion(mc);\r\n        //qz2.runQuiz();\r\n\r\n        Quiz qz3 = new Quiz();\r\n        qz3.addQuestion(chkbx);\r\n        qz3.addQuestion(mc);\r\n        qz3.addQuestion(tf);\r\n        qz.runQuiz();\r\n        }\r\n    }\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/QuizRunner.java	(revision 69975818a88b7e4e703647e23917240457daa34a)
++++ src/QuizRunner.java	(date 1590377092117)
+@@ -1,4 +1,8 @@
++import javafx.scene.control.CheckBox;
++
++import javax.swing.*;
+ import java.util.ArrayList;
++import java.util.Arrays;
+ import java.util.HashMap;
+ import java.util.Map;
+ 
+@@ -11,37 +15,32 @@
+         choices.put('c', "Luna");
+         choices.put('d', "Reapl");
+         String [] answer = new String[] {"a", "b"};
+-        Checkbox chkbx = new Checkbox("Who are the bestest girls?", choices, 5, answer);
++        Checkbox q1 = new Checkbox("Who are the bestest girls?", choices, 5, answer);
++
++        TrueFalse q2 = new TrueFalse("Allison is always right", 5, "t");
++
++        MultiChoice q3 =  new MultiChoice("Who is a demon?", choices, 5, "d");
++
++        String [] answer0 = new String [] {"a"};
++        Checkbox q4 = new Checkbox("Which is the stinkiest?", choices, 5 ,answer0);
+ 
+-        TrueFalse tf = new TrueFalse("Allison is always right", 5, "t");
++        TrueFalse q5 = new TrueFalse("Jayden is not a turd.", 5, "f");
+ 
+-        MultiChoice mc =  new MultiChoice("Who is a demon?", choices, 5, "d");
++        MultiChoice q6 = new MultiChoice("Who is the looniest?", choices, 5, "c");
+ 
+-        // test checkbox
++        Checkbox q7 = new Checkbox("Who is french?", choices, 5, answer);
++        String [] answer1 = new String [] {"c", "d"};
++        Checkbox q8 = new Checkbox("Which of these is hellspawn?", choices, 5,answer1);
++
++        Checkbox q9 = new Checkbox("Who needs to stop falling apart?", choices, 5, answer0);
++
++        Question [] arr = new Question [] {q1,q2,q3,q4,q5};
++
++        ArrayList<Question> questions = new ArrayList<>(Arrays.asList(arr));
++
+         Quiz qz = new Quiz();
+-        qz.addQuestion(chkbx);
+-//        qz.runQuiz();
+-
+-        // test true false
+-        Quiz qz0 = new Quiz();
+-        qz0.addQuestion(tf);
+-        //qz0.runQuiz();
++        qz.addMultipleQuestions(questions);
+ 
+-        //test multiple choice
+-        Quiz qz1 = new Quiz();
+-        qz1.addQuestion(mc);
+-        //qz1.runQuiz();
+-
+-        //test multiple choice and true false
+-        Quiz qz2 = new Quiz();
+-        qz2.addQuestion(tf);
+-        qz2.addQuestion(mc);
+-        //qz2.runQuiz();
+-
+-        Quiz qz3 = new Quiz();
+-        qz3.addQuestion(chkbx);
+-        qz3.addQuestion(mc);
+-        qz3.addQuestion(tf);
+         qz.runQuiz();
+         }
+     }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"953839af-cb92-41a4-8385-7738b07e2566\" name=\"Default Changelist\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/Quiz.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/Quiz.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bin/QuizRunner.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bin/QuizRunner.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Quiz.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Quiz.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/QuizRunner.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/QuizRunner.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"DefaultGradleProjectSettings\">\r\n    <option name=\"isMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1bs5v48DG8cm0C7i8c1v4Y3Ql91\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$USER_HOME$/lc101/unit3/java\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Modules\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.15\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.2\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"configurable.group.appearance\" />\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.QuizRunner\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"SandBoxJava\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"QuizRunner\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"QuizRunner\" />\r\n      <module name=\"SandBoxJava\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.QuizRunner\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"953839af-cb92-41a4-8385-7738b07e2566\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1564766936590</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1564766936590</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state width=\"1237\" height=\"370\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1590372027914\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state width=\"1237\" height=\"370\" key=\"GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680\" timestamp=\"1590372027914\" />\r\n    <state width=\"1237\" height=\"370\" key=\"GridCell.Tab.0.center\" timestamp=\"1590372027914\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state width=\"1237\" height=\"370\" key=\"GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680\" timestamp=\"1590372027914\" />\r\n    <state width=\"1237\" height=\"370\" key=\"GridCell.Tab.0.left\" timestamp=\"1590372027913\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state width=\"1237\" height=\"370\" key=\"GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680\" timestamp=\"1590372027913\" />\r\n    <state width=\"1237\" height=\"370\" key=\"GridCell.Tab.0.right\" timestamp=\"1590372027914\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state width=\"1237\" height=\"370\" key=\"GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680\" timestamp=\"1590372027914\" />\r\n    <state width=\"1237\" height=\"204\" key=\"GridCell.Tab.1.bottom\" timestamp=\"1590364110964\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state width=\"1237\" height=\"204\" key=\"GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680\" timestamp=\"1590364110964\" />\r\n    <state width=\"1237\" height=\"204\" key=\"GridCell.Tab.1.center\" timestamp=\"1590364110963\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state width=\"1237\" height=\"204\" key=\"GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680\" timestamp=\"1590364110963\" />\r\n    <state width=\"1237\" height=\"204\" key=\"GridCell.Tab.1.left\" timestamp=\"1590364110963\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state width=\"1237\" height=\"204\" key=\"GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680\" timestamp=\"1590364110963\" />\r\n    <state width=\"1237\" height=\"204\" key=\"GridCell.Tab.1.right\" timestamp=\"1590364110964\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state width=\"1237\" height=\"204\" key=\"GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680\" timestamp=\"1590364110964\" />\r\n    <state x=\"93\" y=\"93\" width=\"1095\" height=\"495\" key=\"com.intellij.history.integration.ui.views.FileHistoryDialog\" timestamp=\"1589408181980\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state x=\"93\" y=\"93\" width=\"1095\" height=\"495\" key=\"com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.680@0.0.1280.680\" timestamp=\"1589408181980\" />\r\n    <state x=\"297\" y=\"151\" key=\"run.anything.popup\" timestamp=\"1590364324484\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state x=\"297\" y=\"151\" key=\"run.anything.popup/0.0.1280.680@0.0.1280.680\" timestamp=\"1590364324484\" />\r\n  </component>\r\n  <component name=\"masterDetails\">\r\n    <states>\r\n      <state key=\"GlobalLibrariesConfigurable.UI\">\r\n        <settings>\r\n          <splitter-proportions>\r\n            <option name=\"proportions\">\r\n              <list>\r\n                <option value=\"0.2\" />\r\n              </list>\r\n            </option>\r\n          </splitter-proportions>\r\n        </settings>\r\n      </state>\r\n      <state key=\"JdkListConfigurable.UI\">\r\n        <settings>\r\n          <last-edited>1.8</last-edited>\r\n          <splitter-proportions>\r\n            <option name=\"proportions\">\r\n              <list>\r\n                <option value=\"0.2\" />\r\n              </list>\r\n            </option>\r\n          </splitter-proportions>\r\n        </settings>\r\n      </state>\r\n      <state key=\"ProjectJDKs.UI\">\r\n        <settings>\r\n          <last-edited>1.8</last-edited>\r\n          <splitter-proportions>\r\n            <option name=\"proportions\">\r\n              <list>\r\n                <option value=\"0.2\" />\r\n              </list>\r\n            </option>\r\n          </splitter-proportions>\r\n        </settings>\r\n      </state>\r\n      <state key=\"ProjectLibrariesConfigurable.UI\">\r\n        <settings>\r\n          <splitter-proportions>\r\n            <option name=\"proportions\">\r\n              <list>\r\n                <option value=\"0.2\" />\r\n              </list>\r\n            </option>\r\n          </splitter-proportions>\r\n        </settings>\r\n      </state>\r\n      <state key=\"ScopeChooserConfigurable.UI\">\r\n        <settings>\r\n          <splitter-proportions>\r\n            <option name=\"proportions\">\r\n              <list>\r\n                <option value=\"0.2\" />\r\n              </list>\r\n            </option>\r\n          </splitter-proportions>\r\n        </settings>\r\n      </state>\r\n    </states>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 69975818a88b7e4e703647e23917240457daa34a)
++++ .idea/workspace.xml	(date 1590377276777)
+@@ -2,9 +2,12 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="953839af-cb92-41a4-8385-7738b07e2566" name="Default Changelist" comment="">
++      <change afterPath="$PROJECT_DIR$/src/AbstractEntity.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/bin/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Question.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/bin/Quiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Quiz.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/bin/QuizRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/QuizRunner.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Question.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quiz.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/QuizRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizRunner.java" afterDir="false" />
+     </list>
+@@ -15,6 +18,13 @@
+   </component>
+   <component name="DefaultGradleProjectSettings">
+     <option name="isMigrated" value="true" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Class" />
++      </list>
++    </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+@@ -72,41 +82,65 @@
+       <option name="presentableId" value="Default" />
+       <updated>1564766936590</updated>
+     </task>
++    <task id="LOCAL-00001" summary="everything works now">
++      <created>1590374308960</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1590374308960</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="everything works now" />
++    <option name="LAST_COMMIT_MESSAGE" value="everything works now" />
+   </component>
+   <component name="WindowStateProjectService">
+-    <state width="1237" height="370" key="GridCell.Tab.0.bottom" timestamp="1590372027914">
++    <state x="446" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1590376569638">
++      <screen x="0" y="0" width="1280" height="680" />
++    </state>
++    <state x="446" y="42" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1590376569638" />
++    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1590374308081">
++      <screen x="0" y="0" width="1280" height="680" />
++    </state>
++    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1590374308081" />
++    <state width="1237" height="204" key="GridCell.Tab.0.bottom" timestamp="1590377276700">
+       <screen x="0" y="0" width="1280" height="680" />
+     </state>
+-    <state width="1237" height="370" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590372027914" />
+-    <state width="1237" height="370" key="GridCell.Tab.0.center" timestamp="1590372027914">
++    <state width="1237" height="204" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590377276700" />
++    <state width="1237" height="204" key="GridCell.Tab.0.center" timestamp="1590377276699">
+       <screen x="0" y="0" width="1280" height="680" />
+     </state>
+-    <state width="1237" height="370" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590372027914" />
+-    <state width="1237" height="370" key="GridCell.Tab.0.left" timestamp="1590372027913">
++    <state width="1237" height="204" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590377276699" />
++    <state width="1237" height="204" key="GridCell.Tab.0.left" timestamp="1590377276698">
+       <screen x="0" y="0" width="1280" height="680" />
+     </state>
+-    <state width="1237" height="370" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590372027913" />
+-    <state width="1237" height="370" key="GridCell.Tab.0.right" timestamp="1590372027914">
++    <state width="1237" height="204" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590377276698" />
++    <state width="1237" height="204" key="GridCell.Tab.0.right" timestamp="1590377276699">
+       <screen x="0" y="0" width="1280" height="680" />
+     </state>
+-    <state width="1237" height="370" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590372027914" />
+-    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1590364110964">
++    <state width="1237" height="204" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590377276699" />
++    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1590377276702">
+       <screen x="0" y="0" width="1280" height="680" />
+     </state>
+-    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590364110964" />
+-    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1590364110963">
++    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590377276702" />
++    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1590377276701">
+       <screen x="0" y="0" width="1280" height="680" />
+     </state>
+-    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1590364110963" />
+-    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1590364110963">
++    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1590377276701" />
++    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1590377276700">
+       <screen x="0" y="0" width="1280" height="680" />
+     </state>
+-    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1590364110963" />
+-    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1590364110964">
++    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1590377276700" />
++    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1590377276702">
+       <screen x="0" y="0" width="1280" height="680" />
+     </state>
+-    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1590364110964" />
++    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1590377276702" />
++    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1590374310786">
++      <screen x="0" y="0" width="1280" height="680" />
++    </state>
++    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1590374310786" />
+     <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589408181980">
+       <screen x="0" y="0" width="1280" height="680" />
+     </state>
+Index: src/AbstractEntity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/AbstractEntity.java	(date 1590376665780)
++++ src/AbstractEntity.java	(date 1590376665780)
+@@ -0,0 +1,14 @@
++public abstract class AbstractEntity {
++
++    private int id;
++    private static int nextId = 1;
++
++    public AbstractEntity() {
++        this.id = nextId;
++        nextId++;
++    }
++
++    public int getId() {
++        return id;
++    }
++}

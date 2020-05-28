@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_5_28_2020_3_51_PM_[Default_Changelist]" date="1590699114415" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_28_2020_3_51_PM_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 5/28/2020 3:51 PM [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="bin/Question.class" />
+    <option name="AFTER_PATH" value="bin/Question.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_28_2020_3_51_PM_[Default_Changelist]/Question.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="bin/Quiz.class" />
+    <option name="AFTER_PATH" value="bin/Quiz.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_28_2020_3_51_PM_[Default_Changelist]/Quiz.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="bin/QuizRunner.class" />
+    <option name="AFTER_PATH" value="bin/QuizRunner.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_28_2020_3_51_PM_[Default_Changelist]/QuizRunner.class" />
+  </binary>
+</changelist>

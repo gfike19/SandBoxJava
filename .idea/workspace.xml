@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="953839af-cb92-41a4-8385-7738b07e2566" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_24_2020_5_42_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_24_2020_5_42_PM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_28_2020_3_51_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_28_2020_3_51_PM__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AbstractEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +40,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="SandBoxJava" />
@@ -52,11 +57,12 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.QuizRunner" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.QuizRunner" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -68,25 +74,37 @@
       <option name="presentableId" value="Default" />
       <updated>1564766936590</updated>
     </task>
+    <task id="LOCAL-00001" summary="moved vowel count to separate branch">
+      <created>1596585412293</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1596585412293</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="moved vowel count to separate branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved vowel count to separate branch" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1237" height="370" key="GridCell.Tab.0.bottom" timestamp="1590372027914">
+    <state width="1237" height="280" key="GridCell.Tab.0.bottom" timestamp="1596586012333">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="370" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590372027914" />
-    <state width="1237" height="370" key="GridCell.Tab.0.center" timestamp="1590372027914">
+    <state width="1237" height="280" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1596586012333" />
+    <state width="1237" height="280" key="GridCell.Tab.0.center" timestamp="1596586012332">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="370" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590372027914" />
-    <state width="1237" height="370" key="GridCell.Tab.0.left" timestamp="1590372027913">
+    <state width="1237" height="280" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1596586012332" />
+    <state width="1237" height="280" key="GridCell.Tab.0.left" timestamp="1596586012332">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="370" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590372027913" />
-    <state width="1237" height="370" key="GridCell.Tab.0.right" timestamp="1590372027914">
+    <state width="1237" height="280" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1596586012332" />
+    <state width="1237" height="280" key="GridCell.Tab.0.right" timestamp="1596586012333">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="370" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590372027914" />
+    <state width="1237" height="280" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1596586012333" />
     <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1590364110964">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

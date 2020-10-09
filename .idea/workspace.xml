@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="953839af-cb92-41a4-8385-7738b07e2566" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_24_2020_5_42_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_24_2020_5_42_PM__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_28_2020_3_51_PM_[Default_Changelist]/Question.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_28_2020_3_51_PM_[Default_Changelist]/Quiz.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_28_2020_3_51_PM_[Default_Changelist]/QuizRunner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_28_2020_3_51_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_28_2020_3_51_PM__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="fizzbuzz" />
+        <entry key="$PROJECT_DIR$" value="arrayToString" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,7 +38,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/lc101/unit3/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -52,11 +61,12 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.QuizRunner" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.QuizRunner" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -71,46 +81,26 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1237" height="370" key="GridCell.Tab.0.bottom" timestamp="1590372027914">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1596663146771">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="370" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590372027914" />
-    <state width="1237" height="370" key="GridCell.Tab.0.center" timestamp="1590372027914">
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1596663146771" />
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom" timestamp="1601756598867">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="370" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590372027914" />
-    <state width="1237" height="370" key="GridCell.Tab.0.left" timestamp="1590372027913">
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1601756598867" />
+    <state width="1237" height="2" key="GridCell.Tab.0.center" timestamp="1601756598867">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="370" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590372027913" />
-    <state width="1237" height="370" key="GridCell.Tab.0.right" timestamp="1590372027914">
+    <state width="1237" height="2" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1601756598867" />
+    <state width="1237" height="2" key="GridCell.Tab.0.left" timestamp="1601756598867">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="370" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590372027914" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1590364110964">
+    <state width="1237" height="2" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1601756598867" />
+    <state width="1237" height="2" key="GridCell.Tab.0.right" timestamp="1601756598867">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590364110964" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1590364110963">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1590364110963" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1590364110963">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1590364110963" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1590364110964">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1590364110964" />
-    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589408181980">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1589408181980" />
-    <state x="297" y="151" key="run.anything.popup" timestamp="1590364324484">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1590364324484" />
+    <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1601756598867" />
   </component>
   <component name="masterDetails">
     <states>
